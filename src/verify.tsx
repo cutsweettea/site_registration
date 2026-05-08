@@ -34,5 +34,8 @@ export default function Verify({ element, redir }: VerifyProps) {
 
     if(isLoading) return null;
     if(isValidRef) return element;
-    else return null;
+    else {
+        window.location.href = redir;
+        return null;
+    }
 }
