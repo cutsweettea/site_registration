@@ -1,0 +1,170 @@
+:root {
+    --reg-submit-animation-time: 0.75s;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 100svh;
+    flex-direction: column;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.textbox {
+    padding: 5px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    transition: 0.5s ease-out;
+}
+
+.pgpbox {
+    padding: 15px;
+    margin: 10px 0;
+    width: 50%;
+    height: 35%;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    transition: 0.5s ease-out;
+    text-align: left;
+}
+
+.textbox:focus {
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.pgpbox:focus {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ca_form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+}
+
+.reg_title_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.reg_text {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 20px;
+}
+
+.reg_text > * {
+    margin: 3px 0;
+}
+
+.reg_title {
+    color: #fff;
+    font-size: 48px;
+    text-shadow: 0 0 4px #fff;
+}
+
+.reg_subtitle {
+    position: relative;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    left: 80px;
+}
+
+.icon {
+    position: relative;
+    width: 75px;
+    height: 89px;
+}
+
+.reg_button {
+    background-color: #242832;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+@keyframes click-fade {
+    0% {
+        background-color: #fff;
+        color: #242832;
+    }
+    100% {
+        background-color: #242832;
+        color: #fff;
+    }
+}
+
+.reg_button_clicked {
+    animation: click-fade 0.5s ease-out forwards;
+}
+
+@keyframes reg-fail-submit {
+    0% {
+        color: #ff0000;
+    }
+    100% {
+        color: #fff;
+    }
+}
+
+@keyframes reg-success-submit {
+    0% {
+        color: #00ff00;
+    }
+    100% {
+        color: #fff;
+    }
+}
+
+.reg_submit_fail {
+    animation: reg-fail-submit var(--reg-submit-animation-time) ease-out forwards;
+}
+
+.reg_submit_success {
+    animation: reg-success-submit var(--reg-submit-animation-time) ease-out forwards;
+}
+
+.column {
+    flex-direction: column;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade_in {
+    animation: fade-in 1.25s ease-in forwards;
+}
