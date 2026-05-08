@@ -74,7 +74,8 @@ export default function Register({ redir }: RegisterProps) {
     }
 
     useEffect(() => {
-        (document.getElementById('refer') as HTMLInputElement).value = ref;
+        const refer_elm = document.getElementById('refer') as HTMLInputElement;
+        refer_elm.value = ref;
 
         setTimeout(() => {
             document.getElementById('content')!.classList.add(styles.fade_in);
@@ -99,7 +100,7 @@ export default function Register({ redir }: RegisterProps) {
                     <input className={styles.textbox} id='ln' placeholder='Login Name'></input>
                     <input className={styles.textbox} id='pwd' type='password' placeholder='Password'></input>
                     <input className={styles.textbox} id='salt' type='password' placeholder='Salt'></input>
-                    <input className={styles.textbox} id='refer' placeholder='Referral'></input>
+                    <input className={styles.textbox} id='refer' placeholder='Referral' disabled={true}></input>
                     {/*<textarea className={styles.pgpbox} id='pgp' placeholder='PGP Key (Optional)'></textarea>*/}
                     <input className={styles.reg_button} id='reg_button' onClick={animate} type='submit' value='REGISTER'></input>
                 </form>
