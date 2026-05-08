@@ -29,7 +29,6 @@ async function createAccount(e: React.ChangeEvent) {
     const pwd = (document.getElementById('pwd')! as HTMLInputElement).value;
     const salt = (document.getElementById('salt')! as HTMLInputElement).value;
     const refer = (document.getElementById('refer')! as HTMLInputElement).value;
-    const pgp = (document.getElementById('pgp')! as HTMLInputElement).value;
     console.log(`ln=${ln}, usn=${usn}, pwd=${pwd}`)
 
     await fetch('https://api.jugg.school/user/create', {
@@ -44,7 +43,7 @@ async function createAccount(e: React.ChangeEvent) {
             pwd: pwd,
             salt: salt,
             refer: refer,
-            pgp: pgp === undefined ? '' : pgp
+            pgp: ''
         })
     })
     .then(res => res.json())
@@ -101,7 +100,7 @@ export default function Register({ redir }: RegisterProps) {
                     <input className={styles.textbox} id='pwd' type='password' placeholder='Password'></input>
                     <input className={styles.textbox} id='salt' type='password' placeholder='Salt'></input>
                     <input className={styles.textbox} id='refer' placeholder='Referral'></input>
-                    <textarea className={styles.pgpbox} id='pgp' placeholder='PGP Key (Optional)'></textarea>
+                    {/*<textarea className={styles.pgpbox} id='pgp' placeholder='PGP Key (Optional)'></textarea>*/}
                     <input className={styles.reg_button} id='reg_button' onClick={animate} type='submit' value='REGISTER'></input>
                 </form>
             </div>
